@@ -14,6 +14,9 @@
 
 <body>
 
+    <!-- Barra de progresso de leitura da página -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <!-- =====================================================
          PASSO 1+2 — HEADLINE + VÍDEO VSL
          (o vídeo de fundo já cumpre o papel do VSL: prende a
@@ -36,45 +39,20 @@
             </div>
 
             <!-- Menu Desktop -->
-            <nav class="nav-menu">
-                <a href="#inicio"><i class="fa-solid fa-house"></i> Início</a>
-                <a href="#historia"><i class="fa-solid fa-user"></i> Sobre</a>
-                <a href="#resultados"><i class="fa-solid fa-chart-line"></i> Resultados</a>
-                <a href="#planos"><i class="fa-solid fa-bolt"></i> Planos</a>
-                <a href="#duvidas"><i class="fa-solid fa-circle-info"></i> Dúvidas</a>
+            <nav class="nav-menu" id="navMenu">
+                <span class="nav-indicator" id="navIndicator"></span>
+                <a href="#inicio" data-nav="inicio" class="active"><i class="fa-solid fa-house"></i> Início</a>
+                <a href="#historia" data-nav="historia"><i class="fa-solid fa-user"></i> Sobre</a>
+                <a href="#resultados" data-nav="resultados"><i class="fa-solid fa-chart-line"></i> Resultados</a>
+                <a href="#planos" data-nav="planos"><i class="fa-solid fa-bolt"></i> Planos</a>
+                <a href="#duvidas" data-nav="duvidas"><i class="fa-solid fa-circle-info"></i> Dúvidas</a>
             </nav>
 
             <!-- Botão substituído (Aparece só no PC) -->
             <button class="btn-header desktop-only" onclick="conhecerPlanos()">
                 <i class="fa-solid fa-tags"></i> Conhecer Planos
             </button>
-
-            <!-- Botão Menu Mobile (Hambúrguer) -->
-            <div class="menu-toggle" id="mobile-menu-btn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
         </header>
-
-        <!-- Menu Lateral (Mobile) -->
-        <div class="sidebar-overlay" id="sidebar-overlay"></div>
-        <div class="sidebar" id="sidebar">
-            <div class="sidebar-header">
-                <div class="logo">
-                    <img src="img/Sabrina Personal.png" alt="Logo da Empresa" class="logo-img">
-                </div>
-                <i class="fa-solid fa-xmark close-btn" id="close-menu-btn"></i>
-            </div>
-            <nav class="sidebar-nav">
-                <a href="#inicio" onclick="fecharMenuMobile()"><i class="fa-solid fa-house"></i> Início</a>
-                <a href="#historia" onclick="fecharMenuMobile()"><i class="fa-solid fa-user"></i> Sobre</a>
-                <a href="#resultados" onclick="fecharMenuMobile()"><i class="fa-solid fa-chart-line"></i> Resultados</a>
-                <a href="#planos" onclick="fecharMenuMobile()"><i class="fa-solid fa-bolt"></i> Planos</a>
-                <a href="#duvidas" onclick="fecharMenuMobile()"><i class="fa-solid fa-circle-info"></i> Dúvidas</a>
-            </nav>
-            <button class="btn-sidebar" onclick="conhecerPlanos()">
-                <i class="fa-solid fa-tags"></i> Conhecer Planos
-            </button>
-        </div>
 
         <!-- Conteúdo Central com animações de entrada -->
         <main class="hero-content">
@@ -114,7 +92,7 @@
          ===================================================== -->
     <section class="lead-section" id="lead">
         <div class="lead-container reveal-left">
-            <span class="section-eyebrow">Passo 03 · Antes de continuar</span>
+            <span class="section-eyebrow">Antes de continuar</span>
             <h2 class="section-title lead-title">Você já tentou de tudo e sente que nada gruda?</h2>
             <p class="lead-text">
                 Dietas restritivas, treinos genéricos copiados da internet, motivação que dura duas semanas.
@@ -145,7 +123,7 @@
     <section class="historia-section" id="historia">
         <div class="historia-container">
             <div class="historia-img reveal-left">
-                <img src="https://i.pravatar.cc/600?img=47" alt="Sabrina, Personal Trainer">
+                <img src="img/5f7e4ff86f3d8.jpg" alt="Sabrina, Personal Trainer">
                 <div class="historia-badge">
                     <span class="badge-number">8+</span>
                     <span class="badge-label">anos<br>de experiência</span>
@@ -153,7 +131,7 @@
             </div>
 
             <div class="historia-content reveal-right">
-                <span class="section-eyebrow">Passo 04 · Quem está por trás</span>
+                <span class="section-eyebrow">Quem está por trás</span>
                 <h2 class="section-title">Minha história é a<br>base da sua transformação</h2>
                 <p class="historia-text">
                     Depois de anos ajudando mulheres a se reconectarem com o próprio corpo,
@@ -198,7 +176,7 @@
          ===================================================== -->
     <section class="metodologia-section" id="metodologia">
         <div class="metodologia-header reveal-left">
-            <span class="section-eyebrow">Passo 05 · A solução</span>
+            <span class="section-eyebrow">A solução</span>
             <h2 class="section-title">Um método claro, do<br>início ao resultado</h2>
         </div>
 
@@ -258,7 +236,7 @@
          ===================================================== -->
     <section class="resultados-section" id="resultados">
         <div class="resultados-header reveal-left">
-            <span class="section-eyebrow">Passo 06 · A prova</span>
+            <span class="section-eyebrow">A prova</span>
             <h2 class="section-title">Resultados que falam<br>por si só</h2>
             <p class="resultados-subtitle">Cada corpo tem seu ritmo. Veja algumas jornadas de alunas que confiaram no
                 processo.</p>
@@ -336,7 +314,7 @@
 
         <div class="galeria-grid">
             <div class="galeria-item item-grande reveal-left">
-                <img src="https://i.pravatar.cc/700?img=45" alt="Estrutura da academia">
+                <img src="img/Academia.jpg" alt="Estrutura da academia">
                 <div class="galeria-overlay">
                     <span class="galeria-categoria">Academia</span>
                     <p>Estrutura completa</p>
@@ -344,7 +322,7 @@
             </div>
 
             <div class="galeria-item reveal-right">
-                <img src="https://i.pravatar.cc/500?img=33" alt="Treino em execução">
+                <img src="img/Captura de tela 2026-07-25 124303.png" alt="Treino em execução">
                 <div class="galeria-overlay">
                     <span class="galeria-categoria">Treinos</span>
                     <p>Execução supervisionada</p>
@@ -352,7 +330,7 @@
             </div>
 
             <div class="galeria-item reveal-right">
-                <img src="https://i.pravatar.cc/500?img=23" alt="Aluna sorrindo após treino">
+                <img src="img/Emagrece até 15kg em 21 dias _Sem ir à academia e sem deixar de comer, o que você gosta.jpg" alt="Aluna sorrindo após treino">
                 <div class="galeria-overlay">
                     <span class="galeria-categoria">Alunas</span>
                     <p>Resultados e conquistas</p>
@@ -360,7 +338,7 @@
             </div>
 
             <div class="galeria-item reveal-left">
-                <img src="https://i.pravatar.cc/500?img=39" alt="Momento lifestyle">
+                <img src="img/Fitness + Food Journal = Your Perfect Healthy Lifestyle Tool.jpg" alt="Momento lifestyle">
                 <div class="galeria-overlay">
                     <span class="galeria-categoria">Lifestyle</span>
                     <p>Equilíbrio fora do treino</p>
@@ -368,7 +346,7 @@
             </div>
 
             <div class="galeria-item reveal-right">
-                <img src="https://i.pravatar.cc/500?img=27" alt="Treino em grupo">
+                <img src="img/download (3).jpg" alt="Treino em grupo">
                 <div class="galeria-overlay">
                     <span class="galeria-categoria">Treinos</span>
                     <p>Energia em cada sessão</p>
@@ -376,7 +354,7 @@
             </div>
 
             <div class="galeria-item reveal-right">
-                <img src="https://i.pravatar.cc/500?img=31" alt="Equipamentos da academia">
+                <img src="img/download (2).jpg" alt="Equipamentos da academia">
                 <div class="galeria-overlay">
                     <span class="galeria-categoria">Academia</span>
                     <p>Equipamentos de ponta</p>
@@ -390,7 +368,7 @@
          ===================================================== -->
     <section class="planos-section" id="planos">
         <div class="planos-header reveal-left">
-            <span class="section-eyebrow">Passo 07 · A oferta</span>
+            <span class="section-eyebrow">A oferta</span>
             <h2 class="section-title">Planos feitos para<br>cada momento da sua jornada</h2>
         </div>
 
@@ -470,7 +448,7 @@
     <section class="cta-final-section">
         <div class="cta-final-overlay"></div>
         <div class="cta-final-content reveal-left">
-            <span class="section-eyebrow">Passo 08 · Feche o acordo</span>
+            <span class="section-eyebrow">Feche o acordo</span>
             <h2 class="cta-final-title">Sua transformação<br>começa com uma mensagem</h2>
             <p class="cta-final-texto">
                 Chega de adiar. Fale agora com a equipe e descubra o plano ideal
@@ -496,7 +474,7 @@
          ===================================================== -->
     <section class="faq-section" id="duvidas">
         <div class="faq-header reveal-left">
-            <span class="section-eyebrow">Passo 09 · Tire suas dúvidas</span>
+            <span class="section-eyebrow">Tire suas dúvidas</span>
             <h2 class="section-title">Perguntas<br>frequentes</h2>
         </div>
 
@@ -555,24 +533,87 @@
         </div>
     </section>
 
-    <!-- ===================== SEÇÃO: REDES SOCIAIS ===================== -->
-    <section class="social-section reveal-right">
-        <p class="social-section-titulo">Acompanhe de perto nos nossos canais</p>
-        <div class="social-icons">
-            <a href="#" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="#" target="_blank" rel="noopener" class="social-icon" aria-label="TikTok">
-                <i class="fa-brands fa-tiktok"></i>
-            </a>
-            <a href="#" target="_blank" rel="noopener" class="social-icon" aria-label="YouTube">
-                <i class="fa-brands fa-youtube"></i>
-            </a>
-            <a href="#" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
-                <i class="fa-brands fa-facebook"></i>
-            </a>
+    <!-- ===================== FOOTER PREMIUM ===================== -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-col footer-brand">
+                <img src="img/Sabrina Personal - logo reta.png" alt="Logo da Empresa" class="footer-logo">
+                <p class="footer-sobre">Treinos personalizados e acompanhamento real para mulheres que querem resultado
+                    de verdade, com ciência e acolhimento.</p>
+                <div class="social-icons footer-social-icons">
+                    <a href="#" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener" class="social-icon" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener" class="social-icon" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Menu rápido</h4>
+                <a href="#inicio">Início</a>
+                <a href="#historia">Sobre</a>
+                <a href="#resultados">Resultados</a>
+                <a href="#planos">Planos</a>
+                <a href="#duvidas">Dúvidas</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <a href="https://wa.me/5500000000000" target="_blank" rel="noopener"><i
+                        class="fa-brands fa-whatsapp"></i> (00) 00000-0000</a>
+                <a href="mailto:contato@sabrinapersonal.com"><i class="fa-solid fa-envelope"></i>
+                    contato@sabrinapersonal.com</a>
+                <span><i class="fa-solid fa-location-dot"></i> Atendimento online e presencial</span>
+            </div>
+
+            <div class="footer-col">
+                <h4>Horários</h4>
+                <span><i class="fa-solid fa-clock"></i> Seg. a Sex. — 6h às 21h</span>
+                <span><i class="fa-solid fa-clock"></i> Sábado — 8h às 14h</span>
+                <span><i class="fa-solid fa-clock"></i> Domingo — Fechado</span>
+            </div>
         </div>
-    </section>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="footerAno"></span> Sabrina Personal. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Menu Inferior Mobile (glass) -->
+    <nav class="mobile-bottom-nav" id="mobileBottomNav" aria-label="Navegação mobile">
+        <a href="#inicio" data-nav="inicio" class="mbn-item active">
+            <i class="fa-solid fa-house"></i>
+            <span>Início</span>
+        </a>
+        <a href="#historia" data-nav="historia" class="mbn-item">
+            <i class="fa-solid fa-user"></i>
+            <span>Sobre</span>
+        </a>
+        <a href="#planos" data-nav="planos" class="mbn-item mbn-center">
+            <i class="fa-solid fa-bolt"></i>
+        </a>
+        <a href="#resultados" data-nav="resultados" class="mbn-item">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Resultados</span>
+        </a>
+        <a href="#duvidas" data-nav="duvidas" class="mbn-item">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>Dúvidas</span>
+        </a>
+    </nav>
+
+    <!-- Botão Voltar ao Topo -->
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>

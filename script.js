@@ -2,7 +2,6 @@
 function conhecerPlanos() {
     console.log("Redirecionando para as opções de planos...");
     alert("Direcionando para a seção de Planos!");
-    fecharMenuMobile(); // Fecha o menu lateral caso o usuário clique pelo celular
 }
 
 // Função do botão principal
@@ -11,28 +10,6 @@ function comecarTransformacao() {
     alert("Vamos começar a sua transformação hoje!");
 }
 
-// LÓGICA DO MENU LATERAL (MOBILE)
-const btnMenuMobile = document.getElementById('mobile-menu-btn');
-const btnCloseMenu = document.getElementById('close-menu-btn');
-const sidebar = document.getElementById('sidebar');
-const overlay = document.getElementById('sidebar-overlay');
-
-function abrirMenuMobile() {
-    sidebar.classList.add('active');
-    overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function fecharMenuMobile() {
-    sidebar.classList.remove('active');
-    overlay.classList.remove('active');
-    document.body.style.overflow = 'auto';
-}
-
-btnMenuMobile.addEventListener('click', abrirMenuMobile);
-btnCloseMenu.addEventListener('click', fecharMenuMobile);
-overlay.addEventListener('click', fecharMenuMobile);
-
 // Interação no menu Glassmorphism ao rolar a página
 window.addEventListener('scroll', () => {
     const header = document.getElementById('main-header');
@@ -40,9 +17,11 @@ window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
         header.style.background = 'rgba(10, 10, 10, 0.85)';
         header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.2)';
+        header.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.35)';
     } else {
         header.style.background = 'rgba(20, 20, 20, 0.4)';
         header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+        header.style.boxShadow = 'none';
     }
 });
 
@@ -110,6 +89,76 @@ if (track && prevBtn && nextBtn && dotsWrap) {
     });
 }
 
+// =====================================================
+// NAVEGAÇÃO MODERNA: indicador ativo, header inteligente,
+// barra de progresso e botão voltar ao topo
+// =====================================================
+const navLinksDesktop = document.querySelectorAll('#navMenu a[data-nav]');
+const navLinksMobile = document.querySelectorAll('.mobile-bottom-nav a[data-nav]');
+const navIndicator = document.getElementById('navIndicator');
+const sections = document.querySelectorAll('#inicio, #historia, #resultados, #planos, #duvidas');
+const scrollProgress = document.getElementById('scrollProgress');
+const backToTop = document.getElementById('backToTop');
+
+function moverIndicador(link) {
+    if (!navIndicator || !link) return;
+    navIndicator.style.width = link.offsetWidth + 'px';
+    navIndicator.style.transform = `translateX(${link.offsetLeft - 5}px)`;
+}
+
+function definirLinkAtivo(id) {
+    navLinksDesktop.forEach((a) => {
+        const ativo = a.dataset.nav === id;
+        a.classList.toggle('active', ativo);
+        if (ativo) moverIndicador(a);
+    });
+    navLinksMobile.forEach((a) => a.classList.toggle('active', a.dataset.nav === id));
+}
+
+// Observa qual seção está em foco na tela para ativar o link correspondente
+if (sections.length) {
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                definirLinkAtivo(entry.target.id);
+            }
+        });
+    }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+
+    sections.forEach((sec) => navObserver.observe(sec));
+}
+
+// Posiciona o indicador corretamente após o carregamento das fontes/layout
+window.addEventListener('load', () => {
+    const ativoInicial = document.querySelector('#navMenu a.active') || navLinksDesktop[0];
+    moverIndicador(ativoInicial);
+});
+
+let ultimoScroll = 0;
+
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const alturaTotal = document.documentElement.scrollHeight - window.innerHeight;
+
+    // Barra de progresso de leitura
+    if (scrollProgress && alturaTotal > 0) {
+        scrollProgress.style.width = `${(scrollY / alturaTotal) * 100}%`;
+    }
+
+    ultimoScroll = scrollY;
+
+    // Botão voltar ao topo
+    if (backToTop) {
+        backToTop.classList.toggle('visible', scrollY > 600);
+    }
+});
+
+if (backToTop) {
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
 // ACCORDION DE FAQ (novo)
 const faqItems = document.querySelectorAll('.faq-item');
 
@@ -132,3 +181,9 @@ faqItems.forEach((item) => {
         }
     });
 });
+
+// RODAPÉ: ano atual dinâmico
+const footerAno = document.getElementById('footerAno');
+if (footerAno) {
+    footerAno.textContent = new Date().getFullYear();
+}
