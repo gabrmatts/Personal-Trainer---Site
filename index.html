@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,15 +11,21 @@
     <!-- Fonte Google: Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <section class="hero-section">
+    <!-- =====================================================
+         PASSO 1+2 — HEADLINE + VÍDEO VSL
+         (o vídeo de fundo já cumpre o papel do VSL: prende a
+         atenção logo na entrada, antes de qualquer texto)
+         ===================================================== -->
+    <section class="hero-section" id="inicio">
         <!-- Vídeo de Fundo -->
         <video autoplay loop muted playsinline class="background-video">
             <source src="video/Video Promo (1).mp4" type="video/mp4">
             Seu navegador não suporta vídeos HTML5.
         </video>
-        
+
         <!-- Gradiente escuro para melhorar a leitura -->
         <div class="video-overlay"></div>
 
@@ -27,10 +34,12 @@
             <div class="logo">
                 <img src="img/Sabrina Personal - logo reta.png" alt="Logo da Empresa" class="logo-img">
             </div>
-            
+
             <!-- Menu Desktop -->
             <nav class="nav-menu">
                 <a href="#inicio"><i class="fa-solid fa-house"></i> Início</a>
+                <a href="#historia"><i class="fa-solid fa-user"></i> Sobre</a>
+                <a href="#resultados"><i class="fa-solid fa-chart-line"></i> Resultados</a>
                 <a href="#planos"><i class="fa-solid fa-bolt"></i> Planos</a>
                 <a href="#duvidas"><i class="fa-solid fa-circle-info"></i> Dúvidas</a>
             </nav>
@@ -57,6 +66,8 @@
             </div>
             <nav class="sidebar-nav">
                 <a href="#inicio" onclick="fecharMenuMobile()"><i class="fa-solid fa-house"></i> Início</a>
+                <a href="#historia" onclick="fecharMenuMobile()"><i class="fa-solid fa-user"></i> Sobre</a>
+                <a href="#resultados" onclick="fecharMenuMobile()"><i class="fa-solid fa-chart-line"></i> Resultados</a>
                 <a href="#planos" onclick="fecharMenuMobile()"><i class="fa-solid fa-bolt"></i> Planos</a>
                 <a href="#duvidas" onclick="fecharMenuMobile()"><i class="fa-solid fa-circle-info"></i> Dúvidas</a>
             </nav>
@@ -76,7 +87,7 @@
             <h1 class="main-title fade-in-up delay-2">
                 A maior plataforma<br>fitness do Brasil. Feita para<br>mulheres reais.
             </h1>
-            
+
             <button class="btn-primary fade-in-up delay-3" onclick="comecarTransformacao()">
                 <i class="fa-solid fa-dumbbell"></i> Comece agora a sua transformação
             </button>
@@ -90,11 +101,480 @@
                     <img src="https://i.pravatar.cc/100?img=12" alt="Aluna">
                     <img src="https://i.pravatar.cc/100?img=16" alt="Aluna">
                 </div>
-                <p class="social-text">Junte-se a mais de <strong>90 mil alunas</strong><br>que já transformaram suas vidas.</p>
+                <p class="social-text">Junte-se a mais de <strong>90 mil alunas</strong><br>que já transformaram suas
+                    vidas.</p>
             </div>
         </main>
     </section>
 
+    <!-- =====================================================
+         PASSO 3 — LEAD
+         Prepara o cenário: apresenta a dor e faz a leitora se
+         reconhecer antes de contarmos a história.
+         ===================================================== -->
+    <section class="lead-section" id="lead">
+        <div class="lead-container reveal-left">
+            <span class="section-eyebrow">Passo 03 · Antes de continuar</span>
+            <h2 class="section-title lead-title">Você já tentou de tudo e sente que nada gruda?</h2>
+            <p class="lead-text">
+                Dietas restritivas, treinos genéricos copiados da internet, motivação que dura duas semanas.
+                Se isso soa familiar, o problema nunca foi você — foi a falta de um método pensado
+                para a sua rotina real.
+            </p>
+
+            <div class="lead-perguntas">
+                <div class="lead-pergunta">
+                    <i class="fa-solid fa-circle-question"></i>
+                    <p>Já começou um treino animada e desistiu em poucas semanas?</p>
+                </div>
+                <div class="lead-pergunta">
+                    <i class="fa-solid fa-circle-question"></i>
+                    <p>Sente que treina, mas os resultados não aparecem?</p>
+                </div>
+                <div class="lead-pergunta">
+                    <i class="fa-solid fa-circle-question"></i>
+                    <p>Não sabe se está fazendo os exercícios do jeito certo?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         PASSO 4 — HISTÓRIA
+         ===================================================== -->
+    <section class="historia-section" id="historia">
+        <div class="historia-container">
+            <div class="historia-img reveal-left">
+                <img src="https://i.pravatar.cc/600?img=47" alt="Sabrina, Personal Trainer">
+                <div class="historia-badge">
+                    <span class="badge-number">8+</span>
+                    <span class="badge-label">anos<br>de experiência</span>
+                </div>
+            </div>
+
+            <div class="historia-content reveal-right">
+                <span class="section-eyebrow">Passo 04 · Quem está por trás</span>
+                <h2 class="section-title">Minha história é a<br>base da sua transformação</h2>
+                <p class="historia-text">
+                    Depois de anos ajudando mulheres a se reconectarem com o próprio corpo,
+                    entendi que treino de verdade vai muito além de repetições: é sobre construir
+                    confiança, saúde e liberdade no dia a dia.
+                </p>
+                <p class="historia-text">
+                    Minha missão é simples: mostrar que qualquer mulher, em qualquer fase da vida,
+                    pode conquistar resultados reais com orientação certa, consistência e acolhimento.
+                </p>
+
+                <div class="historia-valores">
+                    <div class="valor-item">
+                        <i class="fa-solid fa-heart"></i>
+                        <div>
+                            <h4>Acolhimento</h4>
+                            <p>Cada aluna é única, e o plano também é.</p>
+                        </div>
+                    </div>
+                    <div class="valor-item">
+                        <i class="fa-solid fa-medal"></i>
+                        <div>
+                            <h4>Resultado real</h4>
+                            <p>Metodologia validada por milhares de alunas.</p>
+                        </div>
+                    </div>
+                    <div class="valor-item">
+                        <i class="fa-solid fa-shield-heart"></i>
+                        <div>
+                            <h4>Ciência e segurança</h4>
+                            <p>Treinos baseados em evidência, sem exageros.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         PASSO 5 — PITCH
+         Apresenta a solução (o método) e seus benefícios.
+         ===================================================== -->
+    <section class="metodologia-section" id="metodologia">
+        <div class="metodologia-header reveal-left">
+            <span class="section-eyebrow">Passo 05 · A solução</span>
+            <h2 class="section-title">Um método claro, do<br>início ao resultado</h2>
+        </div>
+
+        <div class="metodologia-timeline">
+            <div class="timeline-linha"></div>
+
+            <div class="timeline-item reveal-left">
+                <div class="timeline-marcador"><i class="fa-solid fa-clipboard-list"></i></div>
+                <div class="timeline-card">
+                    <span class="timeline-step">Etapa 1</span>
+                    <h4>Avaliação</h4>
+                    <p>Entendemos seu histórico, objetivos e rotina para montar a base do plano.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-right">
+                <div class="timeline-marcador"><i class="fa-solid fa-pen-ruler"></i></div>
+                <div class="timeline-card">
+                    <span class="timeline-step">Etapa 2</span>
+                    <h4>Planejamento</h4>
+                    <p>Criação do treino sob medida, alinhado à sua realidade e nível atual.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-left">
+                <div class="timeline-marcador"><i class="fa-solid fa-dumbbell"></i></div>
+                <div class="timeline-card">
+                    <span class="timeline-step">Etapa 3</span>
+                    <h4>Execução</h4>
+                    <p>Início dos treinos com orientação técnica clara em cada movimento.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-right">
+                <div class="timeline-marcador"><i class="fa-solid fa-chart-simple"></i></div>
+                <div class="timeline-card">
+                    <span class="timeline-step">Etapa 4</span>
+                    <h4>Acompanhamento</h4>
+                    <p>Ajustes contínuos com base na sua evolução e feedback semanal.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-left">
+                <div class="timeline-marcador"><i class="fa-solid fa-trophy"></i></div>
+                <div class="timeline-card">
+                    <span class="timeline-step">Etapa 5</span>
+                    <h4>Evolução</h4>
+                    <p>Resultados consolidados e novos objetivos traçados para seguir evoluindo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         PASSO 6 — EVIDÊNCIA
+         Prova social: antes e depois de alunas reais.
+         ===================================================== -->
+    <section class="resultados-section" id="resultados">
+        <div class="resultados-header reveal-left">
+            <span class="section-eyebrow">Passo 06 · A prova</span>
+            <h2 class="section-title">Resultados que falam<br>por si só</h2>
+            <p class="resultados-subtitle">Cada corpo tem seu ritmo. Veja algumas jornadas de alunas que confiaram no
+                processo.</p>
+        </div>
+
+        <div class="resultados-carousel-wrap">
+            <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Anterior">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <div class="resultados-track" id="resultadosTrack">
+                <div class="resultado-card">
+                    <div class="resultado-imgs">
+                        <img src="https://i.pravatar.cc/300?img=32" alt="Antes">
+                        <img src="https://i.pravatar.cc/300?img=44" alt="Depois">
+                    </div>
+                    <div class="resultado-info">
+                        <span class="resultado-tempo"><i class="fa-solid fa-clock"></i> 4 meses</span>
+                        <h4>Emagrecimento e definição</h4>
+                        <p>Perda de gordura corporal com ganho de força e disposição no dia a dia.</p>
+                    </div>
+                </div>
+
+                <div class="resultado-card">
+                    <div class="resultado-imgs">
+                        <img src="https://i.pravatar.cc/300?img=25" alt="Antes">
+                        <img src="https://i.pravatar.cc/300?img=48" alt="Depois">
+                    </div>
+                    <div class="resultado-info">
+                        <span class="resultado-tempo"><i class="fa-solid fa-clock"></i> 6 meses</span>
+                        <h4>Hipertrofia e postura</h4>
+                        <p>Ganho de massa magra e correção postural com treino orientado.</p>
+                    </div>
+                </div>
+
+                <div class="resultado-card">
+                    <div class="resultado-imgs">
+                        <img src="https://i.pravatar.cc/300?img=20" alt="Antes">
+                        <img src="https://i.pravatar.cc/300?img=29" alt="Depois">
+                    </div>
+                    <div class="resultado-info">
+                        <span class="resultado-tempo"><i class="fa-solid fa-clock"></i> 3 meses</span>
+                        <h4>Retorno pós-gestação</h4>
+                        <p>Recondicionamento físico seguro e progressivo após a gravidez.</p>
+                    </div>
+                </div>
+
+                <div class="resultado-card">
+                    <div class="resultado-imgs">
+                        <img src="https://i.pravatar.cc/300?img=36" alt="Antes">
+                        <img src="https://i.pravatar.cc/300?img=41" alt="Depois">
+                    </div>
+                    <div class="resultado-info">
+                        <span class="resultado-tempo"><i class="fa-solid fa-clock"></i> 8 meses</span>
+                        <h4>Mudança de estilo de vida</h4>
+                        <p>Consistência nos treinos aliada a hábitos saudáveis e sustentáveis.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Próximo">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots"></div>
+    </section>
+
+    <!-- ===================== SEÇÃO: GALERIA (reforço de evidência) ===================== -->
+    <section class="galeria-section" id="galeria">
+        <div class="galeria-header reveal-left">
+            <span class="section-eyebrow">Por dentro da rotina</span>
+            <h2 class="section-title">Um pouco do nosso<br>dia a dia</h2>
+        </div>
+
+        <div class="galeria-grid">
+            <div class="galeria-item item-grande reveal-left">
+                <img src="https://i.pravatar.cc/700?img=45" alt="Estrutura da academia">
+                <div class="galeria-overlay">
+                    <span class="galeria-categoria">Academia</span>
+                    <p>Estrutura completa</p>
+                </div>
+            </div>
+
+            <div class="galeria-item reveal-right">
+                <img src="https://i.pravatar.cc/500?img=33" alt="Treino em execução">
+                <div class="galeria-overlay">
+                    <span class="galeria-categoria">Treinos</span>
+                    <p>Execução supervisionada</p>
+                </div>
+            </div>
+
+            <div class="galeria-item reveal-right">
+                <img src="https://i.pravatar.cc/500?img=23" alt="Aluna sorrindo após treino">
+                <div class="galeria-overlay">
+                    <span class="galeria-categoria">Alunas</span>
+                    <p>Resultados e conquistas</p>
+                </div>
+            </div>
+
+            <div class="galeria-item reveal-left">
+                <img src="https://i.pravatar.cc/500?img=39" alt="Momento lifestyle">
+                <div class="galeria-overlay">
+                    <span class="galeria-categoria">Lifestyle</span>
+                    <p>Equilíbrio fora do treino</p>
+                </div>
+            </div>
+
+            <div class="galeria-item reveal-right">
+                <img src="https://i.pravatar.cc/500?img=27" alt="Treino em grupo">
+                <div class="galeria-overlay">
+                    <span class="galeria-categoria">Treinos</span>
+                    <p>Energia em cada sessão</p>
+                </div>
+            </div>
+
+            <div class="galeria-item reveal-right">
+                <img src="https://i.pravatar.cc/500?img=31" alt="Equipamentos da academia">
+                <div class="galeria-overlay">
+                    <span class="galeria-categoria">Academia</span>
+                    <p>Equipamentos de ponta</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         PASSO 7 — OFERTA
+         ===================================================== -->
+    <section class="planos-section" id="planos">
+        <div class="planos-header reveal-left">
+            <span class="section-eyebrow">Passo 07 · A oferta</span>
+            <h2 class="section-title">Planos feitos para<br>cada momento da sua jornada</h2>
+        </div>
+
+        <div class="planos-grid">
+            <div class="plano-card reveal-left">
+                <h3 class="plano-nome">Consultoria Online</h3>
+                <p class="plano-desc">Treinos e acompanhamento 100% à distância, no seu ritmo.</p>
+                <div class="plano-preco"><span class="preco-moeda">R$</span>149<span class="preco-periodo">/mês</span>
+                </div>
+                <ul class="plano-lista">
+                    <li><i class="fa-solid fa-check"></i> Treino personalizado</li>
+                    <li><i class="fa-solid fa-check"></i> Ajustes mensais</li>
+                    <li><i class="fa-solid fa-check"></i> Suporte via WhatsApp</li>
+                    <li><i class="fa-solid fa-check"></i> App de acompanhamento</li>
+                </ul>
+                <button class="btn-plano" onclick="conhecerPlanos()">Quero esse plano</button>
+            </div>
+
+            <div class="plano-card plano-destaque reveal-left">
+                <span class="plano-tag">Mais escolhido</span>
+                <h3 class="plano-nome">Plano Premium</h3>
+                <p class="plano-desc">O acompanhamento mais completo, com prioridade em tudo.</p>
+                <div class="plano-preco"><span class="preco-moeda">R$</span>289<span class="preco-periodo">/mês</span>
+                </div>
+                <ul class="plano-lista">
+                    <li><i class="fa-solid fa-check"></i> Treino + dieta personalizados</li>
+                    <li><i class="fa-solid fa-check"></i> Ajustes quinzenais</li>
+                    <li><i class="fa-solid fa-check"></i> Suporte prioritário 7 dias</li>
+                    <li><i class="fa-solid fa-check"></i> Chamada de vídeo mensal</li>
+                    <li><i class="fa-solid fa-check"></i> Acesso a conteúdos exclusivos</li>
+                </ul>
+                <button class="btn-plano btn-plano-destaque" onclick="conhecerPlanos()">Quero esse plano</button>
+            </div>
+
+            <div class="plano-card reveal-right">
+                <h3 class="plano-nome">Consultoria Presencial</h3>
+                <p class="plano-desc">Treinos acompanhados pessoalmente, com correção em tempo real.</p>
+                <div class="plano-preco"><span class="preco-moeda">R$</span>399<span class="preco-periodo">/mês</span>
+                </div>
+                <ul class="plano-lista">
+                    <li><i class="fa-solid fa-check"></i> Treino presencial supervisionado</li>
+                    <li><i class="fa-solid fa-check"></i> Correção de execução ao vivo</li>
+                    <li><i class="fa-solid fa-check"></i> Avaliação física periódica</li>
+                    <li><i class="fa-solid fa-check"></i> Suporte via WhatsApp</li>
+                </ul>
+                <button class="btn-plano" onclick="conhecerPlanos()">Quero esse plano</button>
+            </div>
+        </div>
+
+        <!-- Formas de pagamento -->
+        <div class="pagamento-wrap reveal-right">
+            <p class="pagamento-titulo"><i class="fa-solid fa-lock"></i> Pagamento seguro</p>
+            <div class="pagamento-icones">
+                <span class="pagamento-item">
+                    <!-- Font Awesome não possui ícone oficial do Pix. Se quiser a logo real,
+                         substitua o <i> abaixo por: <img src="img/pix-logo.png" alt="Pix" class="pagamento-img-pequena"> -->
+                    <i class="fa-solid fa-qrcode"></i> Pix
+                </span>
+                <span class="pagamento-item">
+                    <i class="fa-solid fa-credit-card"></i> Crédito
+                </span>
+                <span class="pagamento-divisor"></span>
+                <!-- Bandeiras de cartão via Font Awesome. Caso queira usar sua própria arte,
+                     substitua este bloco por: <img src="img/bandeiras-cartao.png" alt="Bandeiras aceitas" class="pagamento-img"> -->
+                <i class="fa-brands fa-cc-visa" title="Visa"></i>
+                <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+                <i class="fa-brands fa-cc-amex" title="American Express"></i>
+                <i class="fa-brands fa-cc-diners-club" title="Diners Club"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         PASSO 8 — ACORDO
+         Remove riscos, adoça o preço, cria urgência e reforça o CTA.
+         ===================================================== -->
+    <section class="cta-final-section">
+        <div class="cta-final-overlay"></div>
+        <div class="cta-final-content reveal-left">
+            <span class="section-eyebrow">Passo 08 · Feche o acordo</span>
+            <h2 class="cta-final-title">Sua transformação<br>começa com uma mensagem</h2>
+            <p class="cta-final-texto">
+                Chega de adiar. Fale agora com a equipe e descubra o plano ideal
+                para o seu momento — sem compromisso.
+            </p>
+
+            <div class="acordo-pontos">
+                <span class="acordo-item"><i class="fa-solid fa-shield-halved"></i> Garantia de 7 dias</span>
+                <span class="acordo-item"><i class="fa-solid fa-bolt"></i> Vagas limitadas este mês</span>
+                <span class="acordo-item"><i class="fa-solid fa-ban"></i> Sem fidelidade, cancele quando quiser</span>
+            </div>
+
+            <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp
+            </a>
+            <p class="acordo-aviso"><i class="fa-solid fa-triangle-exclamation"></i> As condições atuais podem mudar a
+                qualquer momento sem aviso prévio.</p>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         PASSO 9 — Q&A
+         ===================================================== -->
+    <section class="faq-section" id="duvidas">
+        <div class="faq-header reveal-left">
+            <span class="section-eyebrow">Passo 09 · Tire suas dúvidas</span>
+            <h2 class="section-title">Perguntas<br>frequentes</h2>
+        </div>
+
+        <div class="faq-list reveal-right">
+            <div class="faq-item">
+                <button class="faq-pergunta">
+                    <span>Preciso ter experiência prévia com treino?</span>
+                    <i class="fa-solid fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-resposta">
+                    <p>Não. Os planos são adaptados ao seu nível atual, seja você iniciante ou já treinando há anos.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-pergunta">
+                    <span>Como funciona o acompanhamento online?</span>
+                    <i class="fa-solid fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-resposta">
+                    <p>Você recebe o treino pelo app, registra sua evolução e conta com suporte direto via WhatsApp para
+                        ajustes e dúvidas.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-pergunta">
+                    <span>Em quanto tempo vejo resultados?</span>
+                    <i class="fa-solid fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-resposta">
+                    <p>Cada corpo responde de um jeito, mas a maioria das alunas nota mudanças consistentes entre 4 e 8
+                        semanas de constância.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-pergunta">
+                    <span>Posso trocar de plano depois?</span>
+                    <i class="fa-solid fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-resposta">
+                    <p>Sim, você pode migrar de plano a qualquer momento conforme sua rotina e objetivos mudarem.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-pergunta">
+                    <span>Quais as formas de pagamento aceitas?</span>
+                    <i class="fa-solid fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-resposta">
+                    <p>Aceitamos Pix e cartão de crédito, com opção de parcelamento nas principais bandeiras.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SEÇÃO: REDES SOCIAIS ===================== -->
+    <section class="social-section reveal-right">
+        <p class="social-section-titulo">Acompanhe de perto nos nossos canais</p>
+        <div class="social-icons">
+            <a href="#" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="social-icon" aria-label="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="social-icon" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+        </div>
+    </section>
+
     <script src="script.js"></script>
 </body>
+
 </html>
