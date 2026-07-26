@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karina Costa — Consultoria Fitness Online e Presencial</title>
+    <title>Sabrina Personal — Consultoria Fitness Online e Presencial</title>
     <link rel="stylesheet" href="src/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -15,7 +17,8 @@
     <div class="promo-bar" id="promoBar">
         <span class="promo-dot"></span>
         Disponível para venda
-        <button class="promo-link" id="promoLink" type="button">Clique aqui <span class="promo-link-extra">para saber mais</span></button>
+        <button class="promo-link" id="promoLink" type="button">Clique aqui <span class="promo-link-extra">para saber
+                mais</span></button>
     </div>
 
     <!-- Mini pop-up: o que vem junto na compra do site -->
@@ -64,10 +67,13 @@
 
             <nav class="nav-menu" id="navMenu">
                 <span class="nav-indicator" id="navIndicator"></span>
-                <a href="#inicio" data-nav="inicio" class="active"><i class="fa-solid fa-house"></i><span>Início</span></a>
+                <a href="#inicio" data-nav="inicio" class="active"><i
+                        class="fa-solid fa-house"></i><span>Início</span></a>
                 <a href="#historia" data-nav="historia"><i class="fa-solid fa-user"></i><span>Sobre</span></a>
-                <a href="#metodologia" data-nav="metodologia"><i class="fa-solid fa-diagram-project"></i><span>Método</span></a>
-                <a href="#resultados" data-nav="resultados"><i class="fa-solid fa-chart-line"></i><span>Resultados</span></a>
+                <a href="#metodologia" data-nav="metodologia"><i
+                        class="fa-solid fa-diagram-project"></i><span>Método</span></a>
+                <a href="#resultados" data-nav="resultados"><i
+                        class="fa-solid fa-chart-line"></i><span>Resultados</span></a>
                 <a href="#planos" data-nav="planos"><i class="fa-solid fa-bolt"></i><span>Planos</span></a>
                 <a href="#duvidas" data-nav="duvidas"><i class="fa-solid fa-circle-info"></i><span>Dúvidas</span></a>
             </nav>
@@ -78,17 +84,19 @@
         </header>
 
         <main class="hero-content">
+            <p class="hero-name fade-in-up delay-1">Sabrina Silva</p>
             <p class="hero-specialty fade-in-up delay-1">
                 <span class="hero-dot"></span> Personal Trainer &middot; Especialista em Performance Feminina
             </p>
 
             <h1 class="main-title fade-in-up delay-2">
-                Treino de alto padrão<br>para mulheres que não<br>aceitam <span class="text-gradient">menos</span>.
+                Performance, elegância<br>e resultado real. Treino que<br>não aceita <span
+                    class="text-gradient">menos</span>.
             </h1>
 
             <p class="hero-subheadline fade-in-up delay-3">
-                Consultoria fitness 100% personalizada online ou presencial com método
-                validado por centenas de transformações reais.
+                Consultoria fitness sob medida — online ou presencial — sem fórmulas genéricas,
+                com método validado por centenas de transformações reais.
             </p>
 
             <div class="hero-cta-group fade-in-up delay-3">
@@ -121,11 +129,11 @@
     <section class="lead-section" id="lead">
         <div class="lead-container reveal-left">
             <span class="section-eyebrow">Antes de continuar</span>
-            <h2 class="section-title lead-title">Você já tentou de tudo e sente que nada gruda?</h2>
+            <h2 class="section-title lead-title">Você já tentou de tudo e sente que nada muda de verdade?</h2>
             <p class="lead-text">
                 Dietas restritivas, treinos genéricos copiados da internet, motivação que dura duas semanas.
-                Se isso soa familiar, o problema nunca foi você foi a falta de um método pensado
-                para a sua rotina real.
+                Se isso soa familiar, o problema nunca foi você — foi a ausência de um método
+                pensado para a sua rotina, seu corpo e o seu ritmo.
             </p>
 
             <div class="lead-perguntas">
@@ -259,6 +267,24 @@
                 processo.</p>
         </div>
 
+        <!-- Slider interativo de comparação (arraste para revelar o antes/depois) -->
+        <div class="ba-wrap reveal-right">
+            <!-- Substitua pelas fotos reais de antes/depois em img/ -->
+            <div class="ba-slider" id="baSlider">
+                <img class="ba-img ba-before" src="https://i.pravatar.cc/900?img=44" alt="Antes da transformação">
+                <img class="ba-img ba-after" src="https://i.pravatar.cc/900?img=32" alt="Depois da transformação">
+
+                <span class="ba-badge ba-badge-before">Antes</span>
+                <span class="ba-badge ba-badge-after">Depois</span>
+
+                <div class="ba-handle" id="baHandle">
+                    <span class="ba-handle-circle"><i class="fa-solid fa-arrows-left-right"></i></span>
+                </div>
+            </div>
+            <p class="ba-hint"><i class="fa-solid fa-arrow-left"></i> Arraste o controle para o lado <i
+                    class="fa-solid fa-arrow-right"></i></p>
+        </div>
+
         <div class="resultados-carousel-wrap">
             <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Anterior">
                 <i class="fa-solid fa-chevron-left"></i>
@@ -279,7 +305,8 @@
                     <div class="resultado-info">
                         <div class="resultado-meta">
                             <span class="resultado-tempo"><i class="fa-solid fa-clock"></i> 4 meses</span>
-                            <span class="resultado-check"><i class="fa-solid fa-circle-check"></i> Objetivo alcançado</span>
+                            <span class="resultado-check"><i class="fa-solid fa-circle-check"></i> Objetivo
+                                alcançado</span>
                         </div>
                         <h4>Emagrecimento e definição</h4>
                         <p>Perda de gordura corporal com ganho de força e disposição no dia a dia.</p>
@@ -300,7 +327,8 @@
                     <div class="resultado-info">
                         <div class="resultado-meta">
                             <span class="resultado-tempo"><i class="fa-solid fa-clock"></i> 6 meses</span>
-                            <span class="resultado-check"><i class="fa-solid fa-circle-check"></i> Objetivo alcançado</span>
+                            <span class="resultado-check"><i class="fa-solid fa-circle-check"></i> Objetivo
+                                alcançado</span>
                         </div>
                         <h4>Hipertrofia e postura</h4>
                         <p>Ganho de massa magra e correção postural com treino orientado.</p>
@@ -321,7 +349,8 @@
                     <div class="resultado-info">
                         <div class="resultado-meta">
                             <span class="resultado-tempo"><i class="fa-solid fa-clock"></i> 3 meses</span>
-                            <span class="resultado-check"><i class="fa-solid fa-circle-check"></i> Objetivo alcançado</span>
+                            <span class="resultado-check"><i class="fa-solid fa-circle-check"></i> Objetivo
+                                alcançado</span>
                         </div>
                         <h4>Retorno pós-gestação</h4>
                         <p>Recondicionamento físico seguro e progressivo após a gravidez.</p>
@@ -342,7 +371,8 @@
                     <div class="resultado-info">
                         <div class="resultado-meta">
                             <span class="resultado-tempo"><i class="fa-solid fa-clock"></i> 8 meses</span>
-                            <span class="resultado-check"><i class="fa-solid fa-circle-check"></i> Objetivo alcançado</span>
+                            <span class="resultado-check"><i class="fa-solid fa-circle-check"></i> Objetivo
+                                alcançado</span>
                         </div>
                         <h4>Mudança de estilo de vida</h4>
                         <p>Consistência nos treinos aliada a hábitos saudáveis e sustentáveis.</p>
@@ -480,6 +510,96 @@
         </div>
     </section>
 
+    <!-- ===================== SEÇÃO: DEPOIMENTOS ===================== -->
+    <section class="depoimentos-section" id="depoimentos">
+        <div class="depoimentos-header reveal-left">
+            <span class="section-eyebrow">O que dizem</span>
+            <h2 class="section-title">Depoimentos de quem<br>já viveu a transformação</h2>
+        </div>
+
+        <div class="depoimentos-carousel-wrap">
+            <button class="carousel-btn carousel-prev" id="depoimentosPrev" aria-label="Anterior">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <div class="depoimentos-track" id="depoimentosTrack">
+                <div class="depoimento-card">
+                    <div class="depoimento-estrelas">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="depoimento-texto">"Em 4 meses emagreci e ganhei uma disposição que não sentia há anos. O
+                        acompanhamento próximo fez toda diferença — nunca me senti só no processo."</p>
+                    <div class="depoimento-autor">
+                        <img src="https://i.pravatar.cc/100?img=47" alt="Camila R.">
+                        <div>
+                            <h4>Camila R.</h4>
+                            <span>Consultoria Online &middot; 4 meses</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="depoimento-card">
+                    <div class="depoimento-estrelas">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="depoimento-texto">"Voltei a treinar depois da gravidez com muito medo, mas o método foi
+                        tão bem construído que hoje me sinto mais forte do que antes."</p>
+                    <div class="depoimento-autor">
+                        <img src="https://i.pravatar.cc/100?img=32" alt="Fernanda M.">
+                        <div>
+                            <h4>Fernanda M.</h4>
+                            <span>Consultoria Presencial &middot; 6 meses</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="depoimento-card">
+                    <div class="depoimento-estrelas">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="depoimento-texto">"O que mais me marcou foi a clareza do plano: eu sabia exatamente o
+                        porquê de cada treino. Resultado real, sem enrolação."</p>
+                    <div class="depoimento-autor">
+                        <img src="https://i.pravatar.cc/100?img=25" alt="Juliana P.">
+                        <div>
+                            <h4>Juliana P.</h4>
+                            <span>Plano Premium &middot; 8 meses</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="depoimento-card">
+                    <div class="depoimento-estrelas">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="depoimento-texto">"Consultoria online e ainda assim me senti acompanhada toda semana. Os
+                        ajustes no treino fizeram eu sair do platô em poucas semanas."</p>
+                    <div class="depoimento-autor">
+                        <img src="https://i.pravatar.cc/100?img=20" alt="Beatriz S.">
+                        <div>
+                            <h4>Beatriz S.</h4>
+                            <span>Consultoria Online &middot; 3 meses</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-btn carousel-next" id="depoimentosNext" aria-label="Próximo">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div class="carousel-dots" id="depoimentosDots"></div>
+    </section>
+
     <section class="cta-final-section">
         <div class="cta-final-overlay"></div>
         <div class="cta-final-content reveal-left">
@@ -487,7 +607,7 @@
             <h2 class="cta-final-title">Sua transformação<br>começa com uma mensagem</h2>
             <p class="cta-final-texto">
                 Chega de adiar. Fale agora com a equipe e descubra o plano ideal
-                para o seu momento sem compromisso.
+                para o seu momento — sem compromisso.
             </p>
 
             <div class="acordo-pontos">

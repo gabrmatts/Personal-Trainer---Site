@@ -191,6 +191,96 @@ faqItems.forEach((item) => {
     });
 });
 
+// SLIDER ANTES/DEPOIS (arrastável)
+const baSlider = document.getElementById('baSlider');
+const baHandle = document.getElementById('baHandle');
+
+if (baSlider && baHandle) {
+    let arrastando = false;
+
+    function definirPosicao(clientX) {
+        const rect = baSlider.getBoundingClientRect();
+        let pct = ((clientX - rect.left) / rect.width) * 100;
+        pct = Math.max(0, Math.min(100, pct));
+        baSlider.style.setProperty('--ba-pos', pct + '%');
+    }
+
+    function iniciarArraste(e) {
+        arrastando = true;
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        definirPosicao(clientX);
+    }
+
+    function moverArraste(e) {
+        if (!arrastando) return;
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        definirPosicao(clientX);
+    }
+
+    function pararArraste() {
+        arrastando = false;
+    }
+
+    baSlider.addEventListener('mousedown', iniciarArraste);
+    baHandle.addEventListener('mousedown', iniciarArraste);
+    baSlider.addEventListener('touchstart', iniciarArraste, { passive: true });
+
+    window.addEventListener('mousemove', moverArraste);
+    window.addEventListener('touchmove', moverArraste, { passive: true });
+    window.addEventListener('mouseup', pararArraste);
+    window.addEventListener('touchend', pararArraste);
+}
+
+// CARROSSEL DE DEPOIMENTOS (reaproveita o mesmo padrão do carrossel de Resultados)
+function initCarrossel(trackId, prevId, nextId, dotsId) {
+    const track = document.getElementById(trackId);
+    const prevBtn = document.getElementById(prevId);
+    const nextBtn = document.getElementById(nextId);
+    const dotsWrap = document.getElementById(dotsId);
+
+    if (!track || !prevBtn || !nextBtn || !dotsWrap) return;
+
+    const cards = track.children;
+
+    Array.from(cards).forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.classList.add('carousel-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+            cards[i].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+        });
+        dotsWrap.appendChild(dot);
+    });
+
+    const dots = dotsWrap.querySelectorAll('.carousel-dot');
+
+    function scrollByCard(direction) {
+        const cardWidth = cards[0].getBoundingClientRect().width + 26;
+        track.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
+    }
+
+    prevBtn.addEventListener('click', () => scrollByCard(-1));
+    nextBtn.addEventListener('click', () => scrollByCard(1));
+
+    track.addEventListener('scroll', () => {
+        const scrollLeft = track.scrollLeft;
+        let closestIndex = 0;
+        let closestDistance = Infinity;
+
+        Array.from(cards).forEach((card, i) => {
+            const distance = Math.abs(card.offsetLeft - scrollLeft);
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closestIndex = i;
+            }
+        });
+
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === closestIndex));
+    });
+}
+
+initCarrossel('depoimentosTrack', 'depoimentosPrev', 'depoimentosNext', 'depoimentosDots');
+
 // RODAPÉ: ano atual dinâmico
 const footerAno = document.getElementById('footerAno');
 if (footerAno) {
