@@ -1863,9 +1863,6 @@ textarea {
     box-shadow: 0 14px 38px rgba(168, 85, 247, 0.55);
 }
 
-/* =====================================================
-   FOOTER PREMIUM
-   ===================================================== */
 .site-footer {
     background-color: #0a0a0a;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -1942,19 +1939,6 @@ textarea {
     font-size: 1rem;
 }
 
-.footer-bottom {
-    max-width: 1200px;
-    margin: 0 auto;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    padding: 22px 0;
-    text-align: center;
-}
-
-.footer-bottom p {
-    color: #6f6f6f;
-    font-size: 0.8rem;
-}
-
 .social-icon {
     width: 50px;
     height: 50px;
@@ -1982,6 +1966,68 @@ textarea {
     outline-offset: 3px;
 }
 
+/* =========================================
+   FOOTER BOTTOM & CRÉDITOS (ATUALIZADO)
+   ========================================= */
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 22px 0;
+    
+    /* Configurações Flexbox para alinhar os itens */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.footer-bottom p {
+    color: #6f6f6f;
+    font-size: 0.8rem;
+    margin: 0; /* Reseta margem para alinhar perfeitamente no flexbox */
+}
+
+/* --- Estilos do Desenvolvido por --- */
+
+.developer-credit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.8rem; 
+    color: #6f6f6f; /* Mesma cor discreta dos direitos autorais */
+}
+
+.developer-credit a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.developer-logo {
+    height: 24px; /* Tamanho proporcional à fonte 0.8rem */
+    width: auto;
+    object-fit: contain;
+    opacity: 0.7; /* Opacidade sutil no estado normal */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Efeito ao passar o mouse na logo */
+.developer-credit a:hover .developer-logo {
+    transform: scale(1.15);
+    opacity: 1; /* Cor 100% visível ao passar o mouse */
+}
+
+/* --- Responsividade (Desktop) --- */
+@media (min-width: 768px) {
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
 /* =====================================================
    SEÇÃO: LEAD (funil de conversão)
    ===================================================== */
