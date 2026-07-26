@@ -6,8 +6,8 @@ function conhecerPlanos() {
 
 // Função do botão principal
 function comecarTransformacao() {
-    console.log("Iniciando fluxo principal...");
-    alert("Vamos começar a sua transformação hoje!");
+    console.log("Iniciando fluxo de consultoria...");
+    alert("Vamos começar sua consultoria hoje!");
 }
 
 // Interação no menu Glassmorphism ao rolar a página
@@ -132,6 +132,11 @@ if (sections.length) {
 window.addEventListener('load', () => {
     const ativoInicial = document.querySelector('#navMenu a.active') || navLinksDesktop[0];
     moverIndicador(ativoInicial);
+});
+
+window.addEventListener('resize', () => {
+    const ativoAtual = document.querySelector('#navMenu a.active');
+    if (ativoAtual) moverIndicador(ativoAtual);
 });
 
 let ultimoScroll = 0;

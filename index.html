@@ -4,73 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plataforma Fitness Premium</title>
+    <title>Sabrina Personal — Consultoria Fitness Online e Presencial</title>
     <link rel="stylesheet" href="src/style.css">
-    <!-- Font Awesome para os ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Fonte Google: Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- Barra de progresso de leitura da página -->
+    <div class="promo-bar" id="promoBar">
+        <span class="promo-dot"></span>
+        Disponível para venda
+    </div>
+
     <div class="scroll-progress" id="scrollProgress"></div>
 
-    <!-- =====================================================
-         PASSO 1+2 — HEADLINE + VÍDEO VSL
-         (o vídeo de fundo já cumpre o papel do VSL: prende a
-         atenção logo na entrada, antes de qualquer texto)
-         ===================================================== -->
     <section class="hero-section" id="inicio">
-        <!-- Vídeo de Fundo -->
         <video autoplay loop muted playsinline class="background-video">
             <source src="video/Video Promo (1).mp4" type="video/mp4">
             Seu navegador não suporta vídeos HTML5.
         </video>
 
-        <!-- Gradiente escuro para melhorar a leitura -->
         <div class="video-overlay"></div>
 
-        <!-- Cabeçalho Fixo com Efeito Blur (Glassmorphism) -->
         <header class="header glass-menu" id="main-header">
             <div class="logo">
                 <img src="img/Sabrina Personal - logo reta.png" alt="Logo da Empresa" class="logo-img">
             </div>
 
-            <!-- Menu Desktop -->
             <nav class="nav-menu" id="navMenu">
                 <span class="nav-indicator" id="navIndicator"></span>
-                <a href="#inicio" data-nav="inicio" class="active"><i class="fa-solid fa-house"></i> Início</a>
-                <a href="#historia" data-nav="historia"><i class="fa-solid fa-user"></i> Sobre</a>
-                <a href="#resultados" data-nav="resultados"><i class="fa-solid fa-chart-line"></i> Resultados</a>
-                <a href="#planos" data-nav="planos"><i class="fa-solid fa-bolt"></i> Planos</a>
-                <a href="#duvidas" data-nav="duvidas"><i class="fa-solid fa-circle-info"></i> Dúvidas</a>
+                <a href="#inicio" data-nav="inicio" class="active"><i
+                        class="fa-solid fa-house"></i><span>Início</span></a>
+                <a href="#historia" data-nav="historia"><i class="fa-solid fa-user"></i><span>Sobre</span></a>
+                <a href="#resultados" data-nav="resultados"><i
+                        class="fa-solid fa-chart-line"></i><span>Resultados</span></a>
+                <a href="#planos" data-nav="planos"><i class="fa-solid fa-bolt"></i><span>Planos</span></a>
+                <a href="#duvidas" data-nav="duvidas"><i class="fa-solid fa-circle-info"></i><span>Dúvidas</span></a>
             </nav>
 
-            <!-- Botão substituído (Aparece só no PC) -->
             <button class="btn-header desktop-only" onclick="conhecerPlanos()">
                 <i class="fa-solid fa-tags"></i> Conhecer Planos
             </button>
         </header>
 
-        <!-- Conteúdo Central com animações de entrada -->
         <main class="hero-content">
             <div class="top-tags fade-in-up delay-1">
-                <span class="tag-text">Brasil: top 1 de hoje</span>
-                <span class="tag-green">99% de satisfação</span>
+                <span class="tag-text">Consultoria online e presencial</span>
+                <span class="tag-green">98% de satisfação</span>
                 <span class="tag-age">18+</span>
             </div>
 
             <h1 class="main-title fade-in-up delay-2">
-                A maior plataforma<br>fitness do Brasil. Feita para<br>mulheres reais.
+                Consultoria fitness<br>feita sob medida para<br>mulheres reais.
             </h1>
 
             <button class="btn-primary fade-in-up delay-3" onclick="comecarTransformacao()">
-                <i class="fa-solid fa-dumbbell"></i> Comece agora a sua transformação
+                <i class="fa-solid fa-dumbbell"></i> Quero minha consultoria
             </button>
 
-            <!-- Prova Social -->
             <div class="social-proof fade-in-up delay-4">
                 <div class="avatars">
                     <img src="https://i.pravatar.cc/100?img=1" alt="Aluna">
@@ -79,17 +71,12 @@
                     <img src="https://i.pravatar.cc/100?img=12" alt="Aluna">
                     <img src="https://i.pravatar.cc/100?img=16" alt="Aluna">
                 </div>
-                <p class="social-text">Junte-se a mais de <strong>90 mil alunas</strong><br>que já transformaram suas
-                    vidas.</p>
+                <p class="social-text">Mais de <strong>500 alunas</strong> já treinaram<br>com acompanhamento
+                    próximo e resultado real.</p>
             </div>
         </main>
     </section>
 
-    <!-- =====================================================
-         PASSO 3 — LEAD
-         Prepara o cenário: apresenta a dor e faz a leitora se
-         reconhecer antes de contarmos a história.
-         ===================================================== -->
     <section class="lead-section" id="lead">
         <div class="lead-container reveal-left">
             <span class="section-eyebrow">Antes de continuar</span>
@@ -117,9 +104,6 @@
         </div>
     </section>
 
-    <!-- =====================================================
-         PASSO 4 — HISTÓRIA
-         ===================================================== -->
     <section class="historia-section" id="historia">
         <div class="historia-container">
             <div class="historia-img reveal-left">
@@ -170,10 +154,6 @@
         </div>
     </section>
 
-    <!-- =====================================================
-         PASSO 5 — PITCH
-         Apresenta a solução (o método) e seus benefícios.
-         ===================================================== -->
     <section class="metodologia-section" id="metodologia">
         <div class="metodologia-header reveal-left">
             <span class="section-eyebrow">A solução</span>
@@ -230,10 +210,6 @@
         </div>
     </section>
 
-    <!-- =====================================================
-         PASSO 6 — EVIDÊNCIA
-         Prova social: antes e depois de alunas reais.
-         ===================================================== -->
     <section class="resultados-section" id="resultados">
         <div class="resultados-header reveal-left">
             <span class="section-eyebrow">A prova</span>
@@ -305,7 +281,6 @@
         <div class="carousel-dots" id="carouselDots"></div>
     </section>
 
-    <!-- ===================== SEÇÃO: GALERIA (reforço de evidência) ===================== -->
     <section class="galeria-section" id="galeria">
         <div class="galeria-header reveal-left">
             <span class="section-eyebrow">Por dentro da rotina</span>
@@ -330,7 +305,8 @@
             </div>
 
             <div class="galeria-item reveal-right">
-                <img src="img/Emagrece até 15kg em 21 dias _Sem ir à academia e sem deixar de comer, o que você gosta.jpg" alt="Aluna sorrindo após treino">
+                <img src="img/Emagrece até 15kg em 21 dias _Sem ir à academia e sem deixar de comer, o que você gosta.jpg"
+                    alt="Aluna sorrindo após treino">
                 <div class="galeria-overlay">
                     <span class="galeria-categoria">Alunas</span>
                     <p>Resultados e conquistas</p>
@@ -363,9 +339,6 @@
         </div>
     </section>
 
-    <!-- =====================================================
-         PASSO 7 — OFERTA
-         ===================================================== -->
     <section class="planos-section" id="planos">
         <div class="planos-header reveal-left">
             <span class="section-eyebrow">A oferta</span>
@@ -418,33 +391,18 @@
             </div>
         </div>
 
-        <!-- Formas de pagamento -->
         <div class="pagamento-wrap reveal-right">
             <p class="pagamento-titulo"><i class="fa-solid fa-lock"></i> Pagamento seguro</p>
             <div class="pagamento-icones">
                 <span class="pagamento-item">
-                    <!-- Font Awesome não possui ícone oficial do Pix. Se quiser a logo real,
-                         substitua o <i> abaixo por: <img src="img/pix-logo.png" alt="Pix" class="pagamento-img-pequena"> -->
-                    <i class="fa-solid fa-qrcode"></i> Pix
+                    <img src="img/PIX (Brazil).png" alt="Pix" class="pagamento-img-pequena">
                 </span>
-                <span class="pagamento-item">
-                    <i class="fa-solid fa-credit-card"></i> Crédito
-                </span>
-                <span class="pagamento-divisor"></span>
-                <!-- Bandeiras de cartão via Font Awesome. Caso queira usar sua própria arte,
-                     substitua este bloco por: <img src="img/bandeiras-cartao.png" alt="Bandeiras aceitas" class="pagamento-img"> -->
-                <i class="fa-brands fa-cc-visa" title="Visa"></i>
-                <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
-                <i class="fa-brands fa-cc-amex" title="American Express"></i>
-                <i class="fa-brands fa-cc-diners-club" title="Diners Club"></i>
+                <img src="img/visa.png" alt="Visa" class="pagamento-bandeira" title="Visa">
+                <img src="img/mastercard.png" alt="Mastercard" class="pagamento-bandeira" title="Mastercard">
             </div>
         </div>
     </section>
 
-    <!-- =====================================================
-         PASSO 8 — ACORDO
-         Remove riscos, adoça o preço, cria urgência e reforça o CTA.
-         ===================================================== -->
     <section class="cta-final-section">
         <div class="cta-final-overlay"></div>
         <div class="cta-final-content reveal-left">
@@ -469,9 +427,6 @@
         </div>
     </section>
 
-    <!-- =====================================================
-         PASSO 9 — Q&A
-         ===================================================== -->
     <section class="faq-section" id="duvidas">
         <div class="faq-header reveal-left">
             <span class="section-eyebrow">Tire suas dúvidas</span>
@@ -533,7 +488,6 @@
         </div>
     </section>
 
-    <!-- ===================== FOOTER PREMIUM ===================== -->
     <footer class="site-footer">
         <div class="footer-top">
             <div class="footer-col footer-brand">
@@ -587,7 +541,6 @@
         </div>
     </footer>
 
-    <!-- Menu Inferior Mobile (glass) -->
     <nav class="mobile-bottom-nav" id="mobileBottomNav" aria-label="Navegação mobile">
         <a href="#inicio" data-nav="inicio" class="mbn-item active">
             <i class="fa-solid fa-house"></i>
@@ -610,7 +563,6 @@
         </a>
     </nav>
 
-    <!-- Botão Voltar ao Topo -->
     <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
