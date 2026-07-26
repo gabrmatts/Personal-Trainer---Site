@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabrina Personal — Consultoria Fitness Online e Presencial</title>
+    <title>Karina Costa — Consultoria Fitness Online e Presencial</title>
     <link rel="stylesheet" href="src/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -15,6 +15,32 @@
     <div class="promo-bar" id="promoBar">
         <span class="promo-dot"></span>
         Disponível para venda
+        <button class="promo-link" id="promoLink" type="button">Clique aqui <span class="promo-link-extra">para saber mais</span></button>
+    </div>
+
+    <!-- Mini pop-up: o que vem junto na compra do site -->
+    <div class="promo-modal-overlay" id="promoModalOverlay">
+        <div class="promo-modal" role="dialog" aria-modal="true" aria-labelledby="promoModalTitle">
+            <button class="promo-modal-close" id="promoModalClose" aria-label="Fechar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="promo-modal-tag">Site à venda</span>
+            <h3 id="promoModalTitle" class="promo-modal-title">O que você pode fazer ao adquirir este site</h3>
+
+            <ul class="promo-modal-list">
+                <li><i class="fa-solid fa-palette"></i> Personalizar cores, fontes e identidade visual completa</li>
+                <li><i class="fa-solid fa-pen"></i> Trocar textos, fotos e vídeos pelo seu conteúdo</li>
+                <li><i class="fa-solid fa-code"></i> Receber o código-fonte completo (HTML, CSS e JS)</li>
+                <li><i class="fa-solid fa-server"></i> Hospedar no domínio e servidor da sua escolha</li>
+                <li><i class="fa-solid fa-layer-group"></i> Adaptar a estrutura para outro nicho ou serviço</li>
+                <li><i class="fa-solid fa-headset"></i> Suporte para configuração e primeiros ajustes</li>
+            </ul>
+
+            <a href="https://wa.me/5500000000000" target="_blank" rel="noopener" class="btn-primary promo-modal-cta">
+                <i class="fa-brands fa-whatsapp"></i> Quero saber o valor
+            </a>
+        </div>
     </div>
 
     <div class="scroll-progress" id="scrollProgress"></div>
@@ -27,41 +53,52 @@
 
         <div class="video-overlay"></div>
 
+        <!-- Elementos de profundidade (glow roxo flutuante) -->
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+
         <header class="header glass-menu" id="main-header">
             <div class="logo">
-                <img src="img/Sabrina Personal - logo reta.png" alt="Logo da Empresa" class="logo-img">
+                <img src="img/logo karina.png" alt="Logo da Empresa" class="logo-img">
             </div>
 
             <nav class="nav-menu" id="navMenu">
                 <span class="nav-indicator" id="navIndicator"></span>
-                <a href="#inicio" data-nav="inicio" class="active"><i
-                        class="fa-solid fa-house"></i><span>Início</span></a>
+                <a href="#inicio" data-nav="inicio" class="active"><i class="fa-solid fa-house"></i><span>Início</span></a>
                 <a href="#historia" data-nav="historia"><i class="fa-solid fa-user"></i><span>Sobre</span></a>
-                <a href="#resultados" data-nav="resultados"><i
-                        class="fa-solid fa-chart-line"></i><span>Resultados</span></a>
+                <a href="#metodologia" data-nav="metodologia"><i class="fa-solid fa-diagram-project"></i><span>Método</span></a>
+                <a href="#resultados" data-nav="resultados"><i class="fa-solid fa-chart-line"></i><span>Resultados</span></a>
                 <a href="#planos" data-nav="planos"><i class="fa-solid fa-bolt"></i><span>Planos</span></a>
                 <a href="#duvidas" data-nav="duvidas"><i class="fa-solid fa-circle-info"></i><span>Dúvidas</span></a>
             </nav>
 
             <button class="btn-header desktop-only" onclick="conhecerPlanos()">
-                <i class="fa-solid fa-tags"></i> Conhecer Planos
+                Agendar Avaliação
             </button>
         </header>
 
         <main class="hero-content">
-            <div class="top-tags fade-in-up delay-1">
-                <span class="tag-text">Consultoria online e presencial</span>
-                <span class="tag-green">98% de satisfação</span>
-                <span class="tag-age">18+</span>
-            </div>
+            <p class="hero-specialty fade-in-up delay-1">
+                <span class="hero-dot"></span> Personal Trainer &middot; Especialista em Performance Feminina
+            </p>
 
             <h1 class="main-title fade-in-up delay-2">
-                Consultoria fitness<br>feita sob medida para<br>mulheres reais.
+                Treino de alto padrão<br>para mulheres que não<br>aceitam <span class="text-gradient">menos</span>.
             </h1>
 
-            <button class="btn-primary fade-in-up delay-3" onclick="comecarTransformacao()">
-                <i class="fa-solid fa-dumbbell"></i> Quero minha consultoria
-            </button>
+            <p class="hero-subheadline fade-in-up delay-3">
+                Consultoria fitness 100% personalizada online ou presencial com método
+                validado por centenas de transformações reais.
+            </p>
+
+            <div class="hero-cta-group fade-in-up delay-3">
+                <button class="btn-primary" onclick="comecarTransformacao()">
+                    <i class="fa-solid fa-calendar-check"></i> Agendar Avaliação
+                </button>
+                <a href="#planos" class="btn-secondary">
+                    Conhecer Programa <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
 
             <div class="social-proof fade-in-up delay-4">
                 <div class="avatars">
@@ -75,6 +112,10 @@
                     próximo e resultado real.</p>
             </div>
         </main>
+
+        <div class="hero-scroll-cue">
+            <span></span>
+        </div>
     </section>
 
     <section class="lead-section" id="lead">
@@ -83,7 +124,7 @@
             <h2 class="section-title lead-title">Você já tentou de tudo e sente que nada gruda?</h2>
             <p class="lead-text">
                 Dietas restritivas, treinos genéricos copiados da internet, motivação que dura duas semanas.
-                Se isso soa familiar, o problema nunca foi você — foi a falta de um método pensado
+                Se isso soa familiar, o problema nunca foi você foi a falta de um método pensado
                 para a sua rotina real.
             </p>
 
@@ -226,11 +267,20 @@
             <div class="resultados-track" id="resultadosTrack">
                 <div class="resultado-card">
                     <div class="resultado-imgs">
-                        <img src="https://i.pravatar.cc/300?img=32" alt="Antes">
-                        <img src="https://i.pravatar.cc/300?img=44" alt="Depois">
+                        <div class="resultado-img-wrap">
+                            <img src="https://i.pravatar.cc/300?img=32" alt="Antes">
+                            <span class="resultado-tag tag-antes">Antes</span>
+                        </div>
+                        <div class="resultado-img-wrap">
+                            <img src="https://i.pravatar.cc/300?img=44" alt="Depois">
+                            <span class="resultado-tag tag-depois">Depois</span>
+                        </div>
                     </div>
                     <div class="resultado-info">
-                        <span class="resultado-tempo"><i class="fa-solid fa-clock"></i> 4 meses</span>
+                        <div class="resultado-meta">
+                            <span class="resultado-tempo"><i class="fa-solid fa-clock"></i> 4 meses</span>
+                            <span class="resultado-check"><i class="fa-solid fa-circle-check"></i> Objetivo alcançado</span>
+                        </div>
                         <h4>Emagrecimento e definição</h4>
                         <p>Perda de gordura corporal com ganho de força e disposição no dia a dia.</p>
                     </div>
@@ -238,11 +288,20 @@
 
                 <div class="resultado-card">
                     <div class="resultado-imgs">
-                        <img src="https://i.pravatar.cc/300?img=25" alt="Antes">
-                        <img src="https://i.pravatar.cc/300?img=48" alt="Depois">
+                        <div class="resultado-img-wrap">
+                            <img src="https://i.pravatar.cc/300?img=25" alt="Antes">
+                            <span class="resultado-tag tag-antes">Antes</span>
+                        </div>
+                        <div class="resultado-img-wrap">
+                            <img src="https://i.pravatar.cc/300?img=48" alt="Depois">
+                            <span class="resultado-tag tag-depois">Depois</span>
+                        </div>
                     </div>
                     <div class="resultado-info">
-                        <span class="resultado-tempo"><i class="fa-solid fa-clock"></i> 6 meses</span>
+                        <div class="resultado-meta">
+                            <span class="resultado-tempo"><i class="fa-solid fa-clock"></i> 6 meses</span>
+                            <span class="resultado-check"><i class="fa-solid fa-circle-check"></i> Objetivo alcançado</span>
+                        </div>
                         <h4>Hipertrofia e postura</h4>
                         <p>Ganho de massa magra e correção postural com treino orientado.</p>
                     </div>
@@ -250,11 +309,20 @@
 
                 <div class="resultado-card">
                     <div class="resultado-imgs">
-                        <img src="https://i.pravatar.cc/300?img=20" alt="Antes">
-                        <img src="https://i.pravatar.cc/300?img=29" alt="Depois">
+                        <div class="resultado-img-wrap">
+                            <img src="https://i.pravatar.cc/300?img=20" alt="Antes">
+                            <span class="resultado-tag tag-antes">Antes</span>
+                        </div>
+                        <div class="resultado-img-wrap">
+                            <img src="https://i.pravatar.cc/300?img=29" alt="Depois">
+                            <span class="resultado-tag tag-depois">Depois</span>
+                        </div>
                     </div>
                     <div class="resultado-info">
-                        <span class="resultado-tempo"><i class="fa-solid fa-clock"></i> 3 meses</span>
+                        <div class="resultado-meta">
+                            <span class="resultado-tempo"><i class="fa-solid fa-clock"></i> 3 meses</span>
+                            <span class="resultado-check"><i class="fa-solid fa-circle-check"></i> Objetivo alcançado</span>
+                        </div>
                         <h4>Retorno pós-gestação</h4>
                         <p>Recondicionamento físico seguro e progressivo após a gravidez.</p>
                     </div>
@@ -262,11 +330,20 @@
 
                 <div class="resultado-card">
                     <div class="resultado-imgs">
-                        <img src="https://i.pravatar.cc/300?img=36" alt="Antes">
-                        <img src="https://i.pravatar.cc/300?img=41" alt="Depois">
+                        <div class="resultado-img-wrap">
+                            <img src="https://i.pravatar.cc/300?img=36" alt="Antes">
+                            <span class="resultado-tag tag-antes">Antes</span>
+                        </div>
+                        <div class="resultado-img-wrap">
+                            <img src="https://i.pravatar.cc/300?img=41" alt="Depois">
+                            <span class="resultado-tag tag-depois">Depois</span>
+                        </div>
                     </div>
                     <div class="resultado-info">
-                        <span class="resultado-tempo"><i class="fa-solid fa-clock"></i> 8 meses</span>
+                        <div class="resultado-meta">
+                            <span class="resultado-tempo"><i class="fa-solid fa-clock"></i> 8 meses</span>
+                            <span class="resultado-check"><i class="fa-solid fa-circle-check"></i> Objetivo alcançado</span>
+                        </div>
                         <h4>Mudança de estilo de vida</h4>
                         <p>Consistência nos treinos aliada a hábitos saudáveis e sustentáveis.</p>
                     </div>
@@ -397,8 +474,8 @@
                 <span class="pagamento-item">
                     <img src="img/PIX (Brazil).png" alt="Pix" class="pagamento-img-pequena">
                 </span>
-                <img src="img/Visa.png" alt="Visa" class="pagamento-bandeira" title="Visa">
-                <img src="img/Mastercard.png" alt="Mastercard" class="pagamento-bandeira" title="Mastercard">
+                <img src="img/visa.png" alt="Visa" class="pagamento-bandeira" title="Visa">
+                <img src="img/mastercard.png" alt="Mastercard" class="pagamento-bandeira" title="Mastercard">
             </div>
         </div>
     </section>
@@ -410,7 +487,7 @@
             <h2 class="cta-final-title">Sua transformação<br>começa com uma mensagem</h2>
             <p class="cta-final-texto">
                 Chega de adiar. Fale agora com a equipe e descubra o plano ideal
-                para o seu momento — sem compromisso.
+                para o seu momento sem compromisso.
             </p>
 
             <div class="acordo-pontos">
@@ -491,7 +568,7 @@
     <footer class="site-footer">
         <div class="footer-top">
             <div class="footer-col footer-brand">
-                <img src="img/Sabrina Personal - logo reta.png" alt="Logo da Empresa" class="footer-logo">
+                <img src="img/logo karina.png" alt="Logo da Empresa" class="footer-logo">
                 <p class="footer-sobre">Treinos personalizados e acompanhamento real para mulheres que querem resultado
                     de verdade, com ciência e acolhimento.</p>
                 <div class="social-icons footer-social-icons">
@@ -550,12 +627,13 @@
             <i class="fa-solid fa-user"></i>
             <span>Sobre</span>
         </a>
-        <a href="#planos" data-nav="planos" class="mbn-item mbn-center">
-            <i class="fa-solid fa-bolt"></i>
-        </a>
         <a href="#resultados" data-nav="resultados" class="mbn-item">
             <i class="fa-solid fa-chart-line"></i>
             <span>Resultados</span>
+        </a>
+        <a href="#planos" data-nav="planos" class="mbn-item">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Planos</span>
         </a>
         <a href="#duvidas" data-nav="duvidas" class="mbn-item">
             <i class="fa-solid fa-circle-info"></i>
