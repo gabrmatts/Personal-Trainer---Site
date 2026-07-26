@@ -15,12 +15,16 @@ window.addEventListener('scroll', () => {
     const header = document.getElementById('main-header');
 
     if (window.scrollY > 50) {
-        header.style.background = 'rgba(10, 10, 10, 0.85)';
-        header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.2)';
-        header.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.35)';
+        header.style.background = 'rgba(0, 0, 0, 0.75)';
+        header.style.backdropFilter = 'blur(16px)';
+        header.style.webkitBackdropFilter = 'blur(16px)';
+        header.style.borderBottom = '1px solid rgba(130, 10, 209, 0.25)';
+        header.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.5)';
     } else {
-        header.style.background = 'rgba(20, 20, 20, 0.4)';
-        header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+        header.style.background = 'transparent';
+        header.style.backdropFilter = 'none';
+        header.style.webkitBackdropFilter = 'none';
+        header.style.borderBottom = '1px solid transparent';
         header.style.boxShadow = 'none';
     }
 });
@@ -96,7 +100,7 @@ if (track && prevBtn && nextBtn && dotsWrap) {
 const navLinksDesktop = document.querySelectorAll('#navMenu a[data-nav]');
 const navLinksMobile = document.querySelectorAll('.mobile-bottom-nav a[data-nav]');
 const navIndicator = document.getElementById('navIndicator');
-const sections = document.querySelectorAll('#inicio, #historia, #resultados, #planos, #duvidas');
+const sections = document.querySelectorAll('#inicio, #historia, #metodologia, #resultados, #planos, #duvidas');
 const scrollProgress = document.getElementById('scrollProgress');
 const backToTop = document.getElementById('backToTop');
 
@@ -191,4 +195,32 @@ faqItems.forEach((item) => {
 const footerAno = document.getElementById('footerAno');
 if (footerAno) {
     footerAno.textContent = new Date().getFullYear();
+}
+
+// MINI POP-UP: "o que você pode fazer ao adquirir o site"
+const promoLink = document.getElementById('promoLink');
+const promoModalOverlay = document.getElementById('promoModalOverlay');
+const promoModalClose = document.getElementById('promoModalClose');
+
+function abrirPromoModal() {
+    promoModalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function fecharPromoModal() {
+    promoModalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+if (promoLink && promoModalOverlay && promoModalClose) {
+    promoLink.addEventListener('click', abrirPromoModal);
+    promoModalClose.addEventListener('click', fecharPromoModal);
+
+    promoModalOverlay.addEventListener('click', (e) => {
+        if (e.target === promoModalOverlay) fecharPromoModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') fecharPromoModal();
+    });
 }
