@@ -33,13 +33,17 @@ body {
 
     /* Aliases usados nos componentes existentes (reaproveitamento) */
     --text-light: #ffffff;
-    --green-accent: #A855F7;
+    --accent-color: #FF2A5F;
     --bg-dark: #0d0d0d;
     --promo-height: 38px;
+    --header-height: 86px;
 }
 
 html {
     scroll-behavior: smooth;
+    /* Corrige o scroll do menu: sem isso, o título de cada seção ficava
+       escondido atrás da barra de promoção + header fixos ao clicar num link do menu. */
+    scroll-padding-top: calc(var(--promo-height) + var(--header-height) + 16px);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -100,7 +104,7 @@ textarea {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--green-accent);
+    background: var(--accent-color);
     box-shadow: 0 0 8px rgba(168, 85, 247, 0.8);
     animation: pulseDot 1.8s ease-in-out infinite;
 }
@@ -376,7 +380,7 @@ textarea {
     left: 7px;
     height: calc(100% - 14px);
     width: 0;
-    background: linear-gradient(135deg, var(--primary-color), #ff2a5f);
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     border-radius: 50px;
     box-shadow: 0 4px 16px rgba(130, 10, 209, 0.5);
     transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1), width 0.5s cubic-bezier(0.65, 0, 0.35, 1);
@@ -451,6 +455,7 @@ textarea {
     background: var(--text-light);
     color: #111;
     transform: scale(1.05);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
 }
 
 .btn-header:focus-visible,
@@ -499,7 +504,7 @@ textarea {
     left: 6%;
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle, var(--purple-light), transparent 70%);
+    background: radial-gradient(circle, var(--accent-color), transparent 70%);
     animation-delay: -5s;
 }
 
@@ -515,7 +520,7 @@ textarea {
     }
 }
 
-/* Nome da Personal + especialidade */
+/* Nome da Personal */
 .hero-name {
     font-size: 1.15rem;
     font-weight: 700;
@@ -523,26 +528,8 @@ textarea {
     margin-bottom: 8px;
 }
 
-.hero-specialty {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    font-size: 0.88rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 26px;
-}
-
-.hero-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--purple-light);
-    box-shadow: 0 0 10px rgba(168, 85, 247, 0.8);
-}
-
 .text-gradient {
-    background: linear-gradient(135deg, var(--purple-lighter), var(--primary-color));
+    background: linear-gradient(135deg, var(--purple-lighter), var(--primary-color) 55%, var(--accent-color));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -581,21 +568,45 @@ textarea {
 }
 
 .btn-secondary:hover {
-    border-color: var(--text-light);
-    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--purple-light);
+    background: rgba(130, 10, 209, 0.14);
+    box-shadow: 0 10px 26px rgba(130, 10, 209, 0.25);
     transform: translateY(-3px);
 }
 
-.hero-scroll-cue {
+.hero-scroll-cta {
     position: absolute;
     bottom: 28px;
     left: 50%;
     transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    z-index: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hero-scroll-cta:hover {
+    transform: translateX(-50%) translateY(4px);
+}
+
+.hero-scroll-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-scroll-cue {
+    position: relative;
     width: 26px;
     height: 42px;
     border: 2px solid rgba(255, 255, 255, 0.4);
     border-radius: 20px;
-    z-index: 1;
 }
 
 .hero-scroll-cue span {
@@ -634,7 +645,7 @@ textarea {
 
 /* Botão Principal com Efeito Glow */
 .btn-primary {
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: var(--text-light);
     border: none;
     padding: 20px 45px;
@@ -646,14 +657,19 @@ textarea {
     display: flex;
     align-items: center;
     gap: 12px;
-    box-shadow: 0 0 45px rgba(130, 10, 209, 0.55), 0 8px 25px rgba(130, 10, 209, 0.4);
-    transition: all 0.3s ease;
+    box-shadow: 0 0 45px rgba(130, 10, 209, 0.45), 0 8px 25px rgba(255, 42, 95, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-hover);
+    filter: brightness(1.08);
     transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 12px 35px rgba(130, 10, 209, 0.7);
+    box-shadow: 0 12px 38px rgba(130, 10, 209, 0.55), 0 10px 30px rgba(255, 42, 95, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px) scale(0.99);
+    filter: brightness(0.96);
 }
 
 /* Prova Social */
@@ -769,7 +785,7 @@ textarea {
     position: absolute;
     bottom: -25px;
     right: -25px;
-    background: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: var(--text-light);
     border-radius: 14px;
     padding: 18px 22px;
@@ -1097,8 +1113,8 @@ textarea {
 }
 
 .tag-depois {
-    background: var(--green-accent);
-    color: #0f2417;
+    background: var(--accent-color);
+    color: #ffffff;
 }
 
 .resultado-info {
@@ -1129,7 +1145,7 @@ textarea {
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    color: var(--green-accent);
+    color: var(--accent-color);
     font-size: 0.72rem;
     font-weight: 700;
 }
@@ -1354,7 +1370,7 @@ textarea {
     top: -14px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: var(--text-light);
     font-size: 0.72rem;
     font-weight: 700;
@@ -1421,7 +1437,7 @@ textarea {
 }
 
 .plano-lista i {
-    color: var(--green-accent);
+    color: var(--accent-color);
     font-size: 0.85rem;
 }
 
@@ -1441,18 +1457,19 @@ textarea {
     background: var(--text-light);
     color: #111;
     transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(255, 255, 255, 0.12);
 }
 
 .btn-plano-destaque {
-    background: var(--primary-color);
-    border-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-color: transparent;
     box-shadow: 0 8px 22px rgba(130, 10, 209, 0.4);
 }
 
 .btn-plano-destaque:hover {
-    background: var(--primary-hover);
+    filter: brightness(1.1);
     color: var(--text-light);
-    box-shadow: 0 12px 30px rgba(130, 10, 209, 0.6);
+    box-shadow: 0 12px 34px rgba(130, 10, 209, 0.5), 0 10px 26px rgba(255, 42, 95, 0.35);
 }
 
 /* Formas de pagamento */
@@ -1476,7 +1493,7 @@ textarea {
 }
 
 .pagamento-titulo i {
-    color: var(--green-accent);
+    color: var(--accent-color);
 }
 
 .pagamento-icones {
@@ -1486,7 +1503,6 @@ textarea {
     flex-wrap: wrap;
     gap: 22px;
     color: #cfcfcf;
-    font-size: 1.9rem;
 }
 
 .pagamento-item {
@@ -1512,16 +1528,11 @@ textarea {
     transform: translateY(-2px);
 }
 
-.pagamento-img,
 .pagamento-img-pequena {
-    height: 28px;
+    height: 20px;
     width: auto;
     object-fit: contain;
     vertical-align: middle;
-}
-
-.pagamento-img-pequena {
-    height: 20px;
 }
 
 /* =====================================================
@@ -1656,7 +1667,7 @@ textarea {
     gap: 20px;
     padding: 22px 26px;
     color: var(--text-light);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 1rem;
     font-weight: 600;
     text-align: left;
@@ -1756,7 +1767,7 @@ textarea {
 }
 
 .depoimento-estrelas {
-    color: var(--purple-light);
+    color: var(--accent-color);
     font-size: 0.85rem;
     letter-spacing: 3px;
     margin-bottom: 18px;
@@ -1843,15 +1854,15 @@ textarea {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    background-color: var(--green-accent);
-    color: #0f2417;
+    background: linear-gradient(135deg, #25D366, #1DA851);
+    color: #ffffff;
     text-decoration: none;
     padding: 20px 45px;
     border-radius: 50px;
     font-size: 1.1rem;
     font-weight: 800;
-    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.35);
-    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
 }
 
 .btn-whatsapp i {
@@ -1859,8 +1870,13 @@ textarea {
 }
 
 .btn-whatsapp:hover {
+    filter: brightness(1.06);
     transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 14px 38px rgba(168, 85, 247, 0.55);
+    box-shadow: 0 14px 38px rgba(37, 211, 102, 0.5);
+}
+
+.btn-whatsapp:active {
+    transform: translateY(-1px) scale(0.99);
 }
 
 .site-footer {
@@ -1967,7 +1983,7 @@ textarea {
 }
 
 /* =========================================
-   FOOTER BOTTOM & CRÉDITOS (ATUALIZADO)
+   FOOTER BOTTOM & CRÉDITOS
    ========================================= */
 
 .footer-bottom {
@@ -1975,8 +1991,6 @@ textarea {
     margin: 0 auto;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     padding: 22px 0;
-    
-    /* Configurações Flexbox para alinhar os itens */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1987,18 +2001,18 @@ textarea {
 .footer-bottom p {
     color: #6f6f6f;
     font-size: 0.8rem;
-    margin: 0; /* Reseta margem para alinhar perfeitamente no flexbox */
+    margin: 0;
 }
 
-/* --- Estilos do Desenvolvido por --- */
+/* --- Desenvolvido por --- */
 
 .developer-credit {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    font-size: 0.8rem; 
-    color: #6f6f6f; /* Mesma cor discreta dos direitos autorais */
+    font-size: 0.8rem;
+    color: #6f6f6f;
 }
 
 .developer-credit a {
@@ -2008,17 +2022,16 @@ textarea {
 }
 
 .developer-logo {
-    height: 24px; /* Tamanho proporcional à fonte 0.8rem */
+    height: 24px;
     width: auto;
     object-fit: contain;
-    opacity: 0.7; /* Opacidade sutil no estado normal */
+    opacity: 0.7;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Efeito ao passar o mouse na logo */
 .developer-credit a:hover .developer-logo {
     transform: scale(1.15);
-    opacity: 1; /* Cor 100% visível ao passar o mouse */
+    opacity: 1;
 }
 
 /* --- Responsividade (Desktop) --- */
@@ -2028,6 +2041,7 @@ textarea {
         justify-content: space-between;
     }
 }
+
 /* =====================================================
    SEÇÃO: LEAD (funil de conversão)
    ===================================================== */
@@ -2116,7 +2130,7 @@ textarea {
 }
 
 .acordo-item i {
-    color: var(--green-accent);
+    color: var(--accent-color);
     font-size: 0.85rem;
 }
 
@@ -2207,6 +2221,7 @@ a:focus-visible {
 @media (max-width: 768px) {
     :root {
         --promo-height: 32px;
+        --header-height: 66px;
     }
 
     .promo-bar {
@@ -2228,12 +2243,6 @@ a:focus-visible {
 
     .promo-modal-title {
         font-size: 1.15rem;
-    }
-}
-
-@media (max-width: 400px) {
-    .promo-link-extra {
-        display: none;
     }
 }
 
@@ -2290,8 +2299,18 @@ a:focus-visible {
         opacity: 0.4;
     }
 
+    .hero-scroll-cta {
+        bottom: 16px;
+        gap: 7px;
+    }
+
+    .hero-scroll-text {
+        font-size: 0.68rem;
+    }
+
     .hero-scroll-cue {
-        display: none;
+        width: 20px;
+        height: 32px;
     }
 
     .historia-section {
@@ -2309,6 +2328,7 @@ a:focus-visible {
 
     .historia-badge {
         right: 10px;
+        bottom: -20px;
     }
 
     .section-title {
@@ -2366,15 +2386,26 @@ a:focus-visible {
 
     .timeline-item {
         grid-template-columns: 1fr;
-        padding-left: 65px;
-        margin-bottom: 40px;
+        padding-left: 62px;
+        margin-bottom: 30px;
     }
 
     .timeline-marcador {
         left: 27px;
-        width: 44px;
-        height: 44px;
-        font-size: 1rem;
+        top: 30px;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        font-size: 0.92rem;
+        box-shadow: 0 0 0 5px rgba(130, 10, 209, 0.15), 0 8px 18px rgba(130, 10, 209, 0.4);
+    }
+
+    .timeline-card {
+        padding: 20px 20px;
+    }
+
+    .timeline-card h4 {
+        font-size: 1.05rem;
     }
 
     .timeline-item:nth-child(odd) .timeline-card,
@@ -2408,7 +2439,6 @@ a:focus-visible {
 
     .pagamento-icones {
         gap: 16px;
-        font-size: 1.5rem;
     }
 
     .galeria-section {
@@ -2565,7 +2595,7 @@ a:focus-visible {
 
     .mbn-item.active {
         color: #ffffff;
-        background: linear-gradient(135deg, var(--primary-color), #ff2a5f);
+        background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
         box-shadow: 0 6px 16px rgba(130, 10, 209, 0.45);
     }
 
